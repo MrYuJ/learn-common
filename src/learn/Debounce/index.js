@@ -22,6 +22,7 @@ const debounce = (fun, wait = 5000) => {
     }, wait)
   }
 }
+
 export default class Debounce extends React.Component {
   onMousemove = (e) => {
     console.log(this)
