@@ -13,6 +13,7 @@ export default class Curry extends React.Component {
         return combine.length < length ? curry.call(this, fn, ...combine) : fn.apply(this, combine);
       }
     }
+
     // 柯里化是将一个多参数函数转换成多个单参数函数，也就是将一个 n 元函数转换成 n 个一元函数。
     // 偏函数则是固定一个函数的一个或者多个参数，也就是将一个 n 元函数转换成一个 n - x 元函数。
     // 感觉是这里用的时候curry((a,b,c) => a + b + c)为柯里化，curry((a,b,c) => a + b + c, 3, 4)为偏函数

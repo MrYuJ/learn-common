@@ -21,6 +21,7 @@ export default class Compose extends React.Component {
         return result;
       }
     }
+
     var toUpperCase = function(x) { return x.toUpperCase(); };
     var hello = function(x) { return 'HELLO, ' + x; };
 

@@ -9,27 +9,61 @@ import Flatten from './learn/Flatten';
 import Each from './learn/Each';
 import Curry from './learn/Curry'
 import Compose from './learn/Compose'
+import Observer from './learn/Vue/Observer'
+import Depend from './learn/Vue/Depend'
+import Compile from './learn/Vue/Compile'
+import {
+  HashRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 class App extends Component {
   render() {
+    const commonList = {
+      Debounce,
+      Throttle,
+      Type,
+      Copy,
+      Flatten,
+      Each,
+      Curry,
+      Compose
+    }
+    const vueList = {
+      Observer,
+      Depend,
+      Compile
+    }
+    const renderLi = (list) => (
+      Object.keys(list).map((key, index) => (
+        <li key={index}><Link to={`/${key}`}>{key}</Link></li>
+      ))
+    )
+    const renderRoute = (list) => (
+      Object.keys(list).map((key, index) => (
+        <Route key={index} path={`/${key}`} component={list[key]}/>
+      ))
+    )
+    const renderTitle = (name) => (
+      <h1 style={{fontSize: '18px', color: 'blue'}}>{name}</h1>
+    )
     return (
       <div className="App">
-        <h1>1.Debounce</h1>
-        <Debounce/> 
-        <hr/>
-        <h1>2.Throttle</h1>
-        <Throttle/>
-        <h1>3.Type</h1>
-        <Type/>
-        <h1>4.Copy</h1>
-        <Copy/>
-        <h1>5.Copy</h1>
-        <Flatten/>
-        <h1>6.Each</h1>
-        <Each/>
-        <h1>7.Curry</h1>
-        <Curry/>
-        <h1>8.Compose</h1>
-        <Compose/>
+        <Router>
+          <div className="wrap">
+            <ul className="list">
+              {renderTitle('基础函数')}
+              {renderLi(commonList)}
+              {renderTitle('Vue分析')}
+              {renderLi(vueList)}
+            </ul>
+            <div className="content">
+              <Route exact path="/" component={Debounce}/>
+              {renderRoute(commonList)}
+              {renderRoute(vueList)}
+            </div>
+          </div>
+        </Router>
       </div>
     );
   }
