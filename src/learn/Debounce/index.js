@@ -1,12 +1,12 @@
 import React from 'react'
-const debounce = (fun, wait = 5000) => {
+const debounce = function (fun, wait = 1000) {
   let id = '';
   let first = false;
   // 点击后，取消防抖，立即执行一次
   debounce.reset = () => {
     first = false;
   }
-  return () => {
+  return function () {
     // 接收onMouseMove回调的参数event
     const args = arguments;
     // 第一次立即执行
@@ -23,9 +23,10 @@ const debounce = (fun, wait = 5000) => {
   }
 }
 
+
 export default class Debounce extends React.Component {
   onMousemove = (e) => {
-    console.log(this)
+    console.log(e.clientX)
   }
   render() {
     return (

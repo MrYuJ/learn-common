@@ -33,6 +33,8 @@ export default class Copy extends React.Component {
       }
       return handleFun(data);
     }
+
+
     const copy2Obj = copy2(obj);
     copy2Obj.b = 2
     console.log(obj, copy2Obj);

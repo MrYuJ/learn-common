@@ -6,6 +6,7 @@ import {type} from '../../Type';
 
 export default class Depend extends React.Component {
   componentDidMount() {
+
     // 定义对象单个key的getter与setter
     const defineReactive = (data, key, val) => {
       const dep = new Dep();
@@ -76,6 +77,7 @@ export default class Depend extends React.Component {
     console.log("Component2:" + Component2._data.c);
     // 触发setter更新所有依赖的Watcher的视图 这里是更新全局数据 触发两个视图更新
     global.c = 22;
+
   }
   render() {
     return (

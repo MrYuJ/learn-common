@@ -6,7 +6,7 @@ import type from '../Type'
 export default class Each extends React.Component {
   componentDidMount() {
     const each = (data, cb) => {
-      if (type === 'object') {
+      if (type(data) === 'object') {
         for (let key in data) {
           cb.call(data[key], data[key], key)
         }
@@ -16,10 +16,12 @@ export default class Each extends React.Component {
         }
       }
     }
+
     each([1, 2, 3], function (value) {
       console.log(this, value);
     })
   }
+  
   render() {
     return (
       <div>查看console</div>

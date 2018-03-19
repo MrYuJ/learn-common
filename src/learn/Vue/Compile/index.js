@@ -352,7 +352,6 @@ export default class Compile extends React.Component {
           return genText(el);
         }
       }
-
       function genChildren (el) {
         const children = el.children;
 
@@ -440,3 +439,5 @@ export default class Compile extends React.Component {
     )
   }
 }
+
+

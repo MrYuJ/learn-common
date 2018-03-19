@@ -45,6 +45,7 @@ export default class Observer extends React.Component {
     console.log(Component._data.a.b);
     console.log(Component._data.a);
     console.log(Component._data.c);
+
   }
   render() {
     return (

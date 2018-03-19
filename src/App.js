@@ -12,6 +12,8 @@ import Compose from './learn/Compose'
 import Observer from './learn/Vue/Observer'
 import Depend from './learn/Vue/Depend'
 import Compile from './learn/Vue/Compile'
+import EventSys from './learn/EventSys'
+import Promise from './learn/Promise'
 import {
   HashRouter as Router,
   Route,
@@ -27,7 +29,9 @@ class App extends Component {
       Flatten,
       Each,
       Curry,
-      Compose
+      Compose,
+      EventSys,
+      Promise
     }
     const vueList = {
       Observer,

@@ -10,7 +10,6 @@ export default class Flatten extends React.Component {
         return Array.isArray(cur) ? [...pre, ...flatten(cur)] : [...pre, cur];
       }, [])
     }
-    console.log(flatten([1, [2, [3, 4]]]));
   }
   render() {
     return (

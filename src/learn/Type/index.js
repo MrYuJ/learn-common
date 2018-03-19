@@ -16,7 +16,6 @@ export {type};
 
 export default class Type extends React.Component {
   componentDidMount() {
-
     console.log(type([1, 2]));
   }
   render() {

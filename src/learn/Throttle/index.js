@@ -40,12 +40,12 @@ import React from 'react'
 //   }
 // }
 
-/**
- * 综合两种 有头有尾
- * @param fun
- * @param wait
- * @returns {function()}
- */
+// /**
+//  * 综合两种 有头有尾
+//  * @param fun
+//  * @param wait
+//  * @returns {function()}
+//  */
 const throttle = (fun, wait = 2000) => {
   let id = '';
   let preTime = 0;
@@ -73,6 +73,7 @@ const throttle = (fun, wait = 2000) => {
     }
   }
 }
+
 
 export default class Throttle extends React.Component {
   onMousemove = (e) => {
